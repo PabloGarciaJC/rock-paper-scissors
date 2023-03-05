@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="game">
+    <h2>Juega contra la computadora</h2>
+    <p>Elige: piedra, papel o tijeras</p>
+    <button id="rock">Piedra</button>
+    <button id="paper">Papel</button>
+    <button id="scissors">Tijeras</button>
+    <p id="result"></p>
+  </div>
+</body>
+
+
+<script>
+
+  const rockBtn = document.getElementById("rock");
+  const paperBtn = document.getElementById("paper");
+  const scissorsBtn = document.getElementById("scissors");
+  const result = document.getElementById("result");
+
+  function getComputerChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * 3);
+    return choices[randomIndex];
+  }
+
+  rockBtn.addEventListener('click', function (event) {
+    const userChoice = event.target.id;
+    const computerChoice = getComputerChoice();
+    const gameResult = determineWinner(userChoice, computerChoice);
+    result.textContent = `Elegiste ${userChoice}, la computadora eligió ${computerChoice}. ${gameResult}!`;
+  });
+
+  paperBtn.addEventListener('click', function (event) {
+    const userChoice = event.target.id;
+    const computerChoice = getComputerChoice();
+    const gameResult = determineWinner(userChoice, computerChoice);
+    result.textContent = `Elegiste ${userChoice}, la computadora eligió ${computerChoice}. ${gameResult}!`;
+  });
+
+  scissorsBtn.addEventListener('click', function (event) {
+    const userChoice = event.target.id;
+    const computerChoice = getComputerChoice();
+    const gameResult = determineWinner(userChoice, computerChoice);
+    result.textContent = `Elegiste ${userChoice}, la computadora eligió ${computerChoice}. ${gameResult}!`;
+  });
+
+  function determineWinner(userChoice, computerChoice) {
+    if (userChoice === computerChoice) {
+      return "Empate";
+    } else if (userChoice === "rock" && computerChoice === "scissors" || userChoice === "paper" && computerChoice === "rock" || userChoice === "scissors" && computerChoice === "paper") {
+      return "Ganaste";
+    } else {
+      return "Perdiste";
+    }
+  }
+
+</script>
+
+</html>
+
+
+<!-- Explicación:
+
+Se definen las variables rockBtn, paperBtn, scissorsBtn y result utilizando el método document.getElementById(), que se utiliza para acceder a los elementos HTML en la página a través de sus identificadores únicos.
+
+Se define la función getComputerChoice(), que devuelve una opción aleatoria para la computadora a partir de una matriz de opciones usando el método Math.random() y Math.floor().
+
+Se agregan eventos click a los botones rockBtn, paperBtn y scissorsBtn utilizando el método addEventListener(). Cada función de manejo de eventos obtiene el valor del botón que se hizo clic utilizando la propiedad target.id, llama a la función getComputerChoice() para obtener la opción de la computadora y luego llama a la función determineWinner() para determinar el resultado del juego. El resultado se muestra en el elemento result utilizando la propiedad textContent.
+
+La función determineWinner() toma dos parámetros, userChoice y computerChoice, que representan las opciones elegidas por el usuario y la computadora, respectivamente. La función utiliza declaraciones if y else para comparar las opciones y determinar el resultado del juego, que se devuelve como una cadena de texto. -->
