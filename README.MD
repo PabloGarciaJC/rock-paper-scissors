@@ -1,5 +1,5 @@
 
-# Explicación:
+# Explicación
 
 1. Se definen las variables rockBtn, paperBtn, scissorsBtn y result utilizando el método document.getElementById(), que se utiliza para acceder a los elementos HTML en la página a través de sus identificadores únicos.
 
