@@ -22,4 +22,4 @@ Demo: [https://master--dainty-twilight-a0700f.netlify.app/]
 | ![Facebook](https://pablogarciajc.com/wp-content/uploads/2023/02/web-icono.png)   | **[www.pablogarciajc.com](https://pablogarciajc.com/)**  |
 
 "El buen trabajo es la solución de hoy.
-Para construir el futuro del mañana"
+Para construir el futuro del mañana".
